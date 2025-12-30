@@ -1,51 +1,35 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
-body{background:#f5f7fa;color:#333}
+body{background:linear-gradient(to bottom,#f5f7fa,#dbe9f4);color:#333;}
 
-.header{
-  display:flex;justify-content:space-between;
-  padding:15px 30px;background:#023047;color:#fff;
-}
-.header a{color:#fff;text-decoration:none;margin-left:15px}
+.header{display:flex;justify-content:space-between;padding:15px 30px;background:#023047;color:#fff;position:sticky;top:0;z-index:100;}
+.header a{color:#fff;text-decoration:none;margin-left:15px;}
 
-.hero{
-  min-height:90vh;
-  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-  url('https://images.unsplash.com/photo-1501117716987-c8e1ecb210c9') center/cover;
-  display:flex;flex-direction:column;
-  justify-content:center;align-items:center;
-  text-align:center;color:#fff;
-}
+.hero{min-height:90vh;background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.6)),url('https://images.unsplash.com/photo-1501117716987-c8e1ecb210c9') center/cover fixed;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;animation:fadeIn 1s ease;}
+.hero h1{font-size:clamp(2rem,5vw,3.5rem);}
+.hero p{margin:20px 0;font-size:1.2rem;}
+.btn{background:#ffb703;color:#000;padding:15px 35px;border-radius:30px;text-decoration:none;font-weight:600;transition:.3s;}
+.btn:hover{background:#fb8500;color:#fff;}
 
-.btn{
-  background:#ffb703;color:#000;
-  padding:15px 35px;border-radius:30px;
-  text-decoration:none;font-weight:600;
-}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;padding:60px 20px;background:#e0f7fa;}
+.features .card{background:#fff;padding:20px;border-radius:15px;box-shadow:0 10px 25px rgba(0,0,0,.1);text-align:center;font-size:1.1rem;opacity:0;transform:translateY(40px);transition:.6s;}
 
-.btn-small{
-  display:inline-block;margin-top:10px;
-  padding:10px 25px;background:#219ebc;
-  color:#fff;border-radius:25px;text-decoration:none;
-}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;padding:60px 20px;background:#ffffff;}
+.hotel-card{background:#fff;padding:20px;border-radius:15px;box-shadow:0 10px 25px rgba(0,0,0,.1);opacity:0;transform:translateY(40px);transition:.6s;}
+.hotel-card img{width:100%;border-radius:10px;}
+.btn-small{display:inline-block;margin-top:10px;padding:10px 25px;background:#219ebc;color:#fff;border-radius:25px;text-decoration:none;transition:.3s;}
+.btn-small:hover{background:#126782;}
 
-.features,.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;padding:60px;
-}
+.cta{background:linear-gradient(90deg,#ffb703,#fb8500);color:#fff;text-align:center;padding:60px 20px;}
+.city-hero{min-height:60vh;display:flex;justify-content:center;align-items:center;text-align:center;color:#fff;background-size:cover;background-position:center;background-repeat:no-repeat;background-blend-mode:overlay;background-color:rgba(0,0,0,0.4);}
+footer{text-align:center;padding:20px;font-size:.85rem;background:#000;color:#aaa;}
 
-.card,.hotel-card{
-  background:#fff;padding:20px;
-  border-radius:15px;
-  box-shadow:0 10px 25px rgba(0,0,0,.1);
-  opacity:0;transform:translateY(40px);
-  transition:.6s;
-}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+.animate.show{opacity:1;transform:translateY(0);}
 
-.hotel-card img{width:100%;border-radius:10px}
-
-.animate.show{opacity:1;transform:translateY(0)}
-
-footer{
-  text-align:center;padding:20px;font-size:.85rem;
+@media(max-width:600px){
+  .hero h1{font-size:2rem;}
+  .hero p{font-size:1rem;}
+  .features{padding:40px 10px;}
+  .grid{padding:40px 10px;}
+  .cta{padding:40px 10px;}
 }
