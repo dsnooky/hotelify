@@ -1,5 +1,60 @@
-<h2>About Hotelify</h2>
-<p>
-Hotelify is a hotel deals website helping travelers book trusted accommodations
-through Agoda. We focus on simplicity, savings, and reliability.
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotelify – About</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Navbar -->
+  <header class="bg-white shadow-md fixed w-full z-20 top-0">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold text-indigo-600">Hotelify</div>
+      <nav class="space-x-6 hidden md:flex">
+        <a href="index.html" class="hover:text-indigo-600">Home</a>
+        <a href="hotels.html" class="hover:text-indigo-600">Hotels</a>
+        <a href="about.html" class="hover:text-indigo-600">About</a>
+        <a href="contact.html" class="hover:text-indigo-600">Contact</a>
+      </nav>
+      <button class="md:hidden mobile-menu-button">
+        <span class="text-2xl">&#9776;</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu hidden bg-white text-center py-3">
+    <a href="index.html" class="block py-2">Home</a>
+    <a href="hotels.html" class="block py-2">Hotels</a>
+    <a href="about.html" class="block py-2">About</a>
+    <a href="contact.html" class="block py-2">Contact</a>
+  </div>
+
+  <section class="pt-24 py-16 container mx-auto px-6 text-center">
+    <h1 class="text-4xl font-bold mb-8" data-aos="fade-down">About Hotelify</h1>
+    <p class="max-w-3xl mx-auto text-lg mb-6" data-aos="fade-up">
+      Hotelify helps travelers discover the best hotel deals worldwide. We aggregate verified hotels from Agoda to ensure you get the best price and trusted service.
+    </p>
+    <p class="max-w-3xl mx-auto text-lg mb-6" data-aos="fade-up" data-aos-delay="100">
+      Our mission is to make hotel booking effortless and reliable. Whether it’s luxury resorts, city hotels, or budget stays, we guide you to the perfect choice.
+    </p>
+    <p class="max-w-3xl mx-auto text-lg" data-aos="fade-up" data-aos-delay="200">
+      Hotelify is your travel companion, providing tips, reviews, and unbeatable deals for all destinations worldwide.
+    </p>
+  </section>
+
+  <footer class="bg-gray-800 text-white text-center px-6 py-6">
+    © 2025 Hotelify | Built with ❤️
+  </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+    const btn = document.querySelector(".mobile-menu-button");
+    const menu = document.querySelector(".mobile-menu");
+    btn.addEventListener("click", () => menu.classList.toggle("hidden"));
+  </script>
+</body>
+</html>
