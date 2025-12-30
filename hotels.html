@@ -1,47 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Hotels | Hotelify</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotelify – Hotels</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
 </head>
-<body>
+<body class="bg-gray-100 text-gray-800">
 
-<header class="header">
-  <div class="logo">Hotelify</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="hotels.html">Hotels</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+  <!-- Navbar -->
+  <header class="bg-white shadow-md fixed w-full z-20 top-0">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold text-indigo-600">Hotelify</div>
+      <nav class="space-x-6 hidden md:flex">
+        <a href="index.html" class="hover:text-indigo-600">Home</a>
+        <a href="hotels.html" class="hover:text-indigo-600">Hotels</a>
+        <a href="about.html" class="hover:text-indigo-600">About</a>
+        <a href="contact.html" class="hover:text-indigo-600">Contact</a>
+      </nav>
+      <button class="md:hidden mobile-menu-button">
+        <span class="text-2xl">&#9776;</span>
+      </button>
+    </div>
+  </header>
 
-<section class="page-title">
-  <h2>Top Agoda Hotel Picks</h2>
-</section>
-
-<section class="grid">
-  <div class="hotel-card animate">
-    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945">
-    <h3>Luxury Beach Resort</h3>
-    <p>5-star beachfront experience</p>
-    <a class="btn-small track" href="https://www.agoda.com/?cid=YOUR_AGODA_ID" target="_blank">View on Agoda</a>
+  <div class="mobile-menu hidden bg-white text-center py-3">
+    <a href="index.html" class="block py-2">Home</a>
+    <a href="hotels.html" class="block py-2">Hotels</a>
+    <a href="about.html" class="block py-2">About</a>
+    <a href="contact.html" class="block py-2">Contact</a>
   </div>
 
-  <div class="hotel-card animate">
-    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267">
-    <h3>City Center Hotel</h3>
-    <p>Perfect for travelers</p>
-    <a class="btn-small track" href="https://www.agoda.com/?cid=YOUR_AGODA_ID" target="_blank">Check Price</a>
-  </div>
-</section>
+  <!-- Hotels Page -->
+  <section class="pt-24 py-16 container mx-auto px-6">
+    <h1 class="text-4xl font-bold text-center mb-12" data-aos="fade-down">All Hotels</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-<footer>
-  Affiliate Disclosure: Hotelify earns commission from Agoda.
-</footer>
+      <!-- Example Hotel Card -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition" data-aos="fade-up">
+        <img src="https://source.unsplash.com/600x400/?beach,resort" class="w-full h-48 object-cover" />
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Luxury Beach Resort</h3>
+          <p class="text-gray-600 mb-4">5‑star beachfront hotel</p>
+          <a href="https://www.agoda.com" target="_blank" class="text-indigo-600 font-medium hover:underline">Book on Agoda</a>
+        </div>
+      </div>
 
-<script src="js/main.js"></script>
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://source.unsplash.com/600x400/?city,hotel" class="w-full h-48 object-cover" />
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">City Center Hotel</h3>
+          <p class="text-gray-600 mb-4">Business & leisure friendly</p>
+          <a href="https://www.agoda.com" target="_blank" class="text-indigo-600 font-medium hover:underline">Book on Agoda</a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="200">
+        <img src="https://source.unsplash.com/600x400/?budget,hotel" class="w-full h-48 object-cover" />
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Budget Friendly Stay</h3>
+          <p class="text-gray-600 mb-4">Affordable & comfortable</p>
+          <a href="https://www.agoda.com" target="_blank" class="text-indigo-600 font-medium hover:underline">Book on Agoda</a>
+        </div>
+      </div>
+
+      <!-- Add more hotel cards here -->
+
+    </div>
+  </section>
+
+  <footer class="bg-gray-800 text-white text-center px-6 py-6">
+    © 2025 Hotelify | Built with ❤️
+  </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+    const btn = document.querySelector(".mobile-menu-button");
+    const menu = document.querySelector(".mobile-menu");
+    btn.addEventListener("click", () => menu.classList.toggle("hidden"));
+  </script>
 </body>
 </html>
