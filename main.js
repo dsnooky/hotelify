@@ -1,4 +1,4 @@
-// Scroll animation
+// Scroll animations
 const items = document.querySelectorAll('.animate');
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
@@ -9,9 +9,12 @@ const observer = new IntersectionObserver(entries=>{
 },{threshold:0.2});
 items.forEach(el=>observer.observe(el));
 
-// Click tracking (console for now)
+// Affiliate click tracking
 document.querySelectorAll('.track').forEach(link=>{
   link.addEventListener('click',()=>{
-    console.log('Affiliate click:', link.href);
+    gtag('event','affiliate_click',{
+      event_category:'Agoda',
+      event_label:link.href
+    });
   });
 });
