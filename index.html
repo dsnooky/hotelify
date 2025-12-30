@@ -3,13 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Hotelify – Best Hotel Deals</title>
-
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- AOS Animation Library -->
   <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
 </head>
 <body class="bg-gray-100 text-gray-800">
@@ -19,13 +14,11 @@
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <div class="text-2xl font-bold text-indigo-600">Hotelify</div>
       <nav class="space-x-6 hidden md:flex">
-        <a href="#home" class="hover:text-indigo-600">Home</a>
-        <a href="#hotels" class="hover:text-indigo-600">Hotels</a>
-        <a href="#about" class="hover:text-indigo-600">About</a>
-        <a href="#contact" class="hover:text-indigo-600">Contact</a>
+        <a href="index.html" class="hover:text-indigo-600">Home</a>
+        <a href="hotels.html" class="hover:text-indigo-600">Hotels</a>
+        <a href="about.html" class="hover:text-indigo-600">About</a>
+        <a href="contact.html" class="hover:text-indigo-600">Contact</a>
       </nav>
-
-      <!-- Mobile Menu Toggle -->
       <button class="md:hidden mobile-menu-button">
         <span class="text-2xl">&#9776;</span>
       </button>
@@ -34,10 +27,10 @@
 
   <!-- Mobile Menu -->
   <div class="mobile-menu hidden bg-white text-center py-3">
-    <a href="#home" class="block py-2">Home</a>
-    <a href="#hotels" class="block py-2">Hotels</a>
-    <a href="#about" class="block py-2">About</a>
-    <a href="#contact" class="block py-2">Contact</a>
+    <a href="index.html" class="block py-2">Home</a>
+    <a href="hotels.html" class="block py-2">Hotels</a>
+    <a href="about.html" class="block py-2">About</a>
+    <a href="contact.html" class="block py-2">Contact</a>
   </div>
 
   <!-- Hero -->
@@ -46,76 +39,65 @@
       <div class="text-center text-white max-w-xl" data-aos="fade-up">
         <h1 class="text-4xl md:text-6xl font-bold mb-4">Discover Best Hotel Deals Worldwide</h1>
         <p class="text-lg mb-6">Book trusted hotels with Agoda & save more.</p>
-        <a href="https://www.agoda.com" target="_blank"
-           class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium transition">
+        <a href="hotels.html" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium transition">
           Search Hotels
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Hotels Section -->
+  <!-- Featured Hotels -->
   <section id="hotels" class="py-16 container mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-8" data-aos="fade-right">Best Price Deals</h2>
+    <h2 class="text-3xl font-bold text-center mb-8" data-aos="fade-right">Featured Hotels</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-      <!-- Card 1 -->
       <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition" data-aos="fade-up">
         <img src="https://source.unsplash.com/600x400/?beach,resort" class="w-full h-48 object-cover" />
         <div class="p-6">
           <h3 class="text-xl font-semibold mb-2">Luxury Beach Resort</h3>
           <p class="text-gray-600 mb-4">5‑star beachfront hotel</p>
-          <a href="https://www.agoda.com" target="_blank"
-             class="text-indigo-600 font-medium hover:underline">View on Agoda</a>
+          <a href="hotels.html" class="text-indigo-600 font-medium hover:underline">View Hotels</a>
         </div>
       </div>
 
-      <!-- Card 2 -->
       <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="100">
         <img src="https://source.unsplash.com/600x400/?city,hotel" class="w-full h-48 object-cover" />
         <div class="p-6">
           <h3 class="text-xl font-semibold mb-2">City Center Hotel</h3>
           <p class="text-gray-600 mb-4">Perfect location for business & leisure</p>
-          <a href="https://www.agoda.com" target="_blank"
-             class="text-indigo-600 font-medium hover:underline">Check Price</a>
+          <a href="hotels.html" class="text-indigo-600 font-medium hover:underline">View Hotels</a>
         </div>
       </div>
 
-      <!-- Card 3 -->
       <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="200">
         <img src="https://source.unsplash.com/600x400/?budget,hotel" class="w-full h-48 object-cover" />
         <div class="p-6">
           <h3 class="text-xl font-semibold mb-2">Budget Friendly Stay</h3>
           <p class="text-gray-600 mb-4">Affordable & comfortable</p>
-          <a href="https://www.agoda.com" target="_blank"
-             class="text-indigo-600 font-medium hover:underline">Book Now</a>
+          <a href="hotels.html" class="text-indigo-600 font-medium hover:underline">View Hotels</a>
         </div>
       </div>
 
     </div>
+    <div class="text-center mt-8">
+      <a href="hotels.html" class="text-indigo-600 font-semibold hover:underline">See All Hotels →</a>
+    </div>
   </section>
 
-  <!-- About -->
+  <!-- About Preview -->
   <section id="about" class="py-16 bg-indigo-50 text-center px-6">
     <h2 class="text-3xl font-bold mb-4" data-aos="zoom-in">About Hotelify</h2>
     <p class="max-w-2xl mx-auto text-lg" data-aos="fade-up">
       Hotelify helps you find the best hotel deals from trusted partners like Agoda. Enjoy worldwide coverage and verified deals at unbeatable prices.
     </p>
+    <a href="about.html" class="mt-4 inline-block text-indigo-600 font-semibold hover:underline" data-aos="fade-up">Read More →</a>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-16 container mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-6" data-aos="fade-right">Contact Us</h2>
-    <form class="max-w-xl mx-auto space-y-4">
-      <input type="text" placeholder="Your Name"
-             class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-indigo-500 focus:border-indigo-500"/>
-      <input type="email" placeholder="Your Email"
-             class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-indigo-500 focus:border-indigo-500"/>
-      <textarea placeholder="Message"
-                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-indigo-500 focus:border-indigo-500"></textarea>
-      <button type="submit"
-              class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg w-full">Send Message</button>
-    </form>
+  <!-- Contact Preview -->
+  <section id="contact" class="py-16 container mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-6" data-aos="fade-right">Get In Touch</h2>
+    <p data-aos="fade-up" class="mb-4">Have questions? Contact us now!</p>
+    <a href="contact.html" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium transition" data-aos="fade-up">Contact Us</a>
   </section>
 
   <!-- Footer -->
@@ -123,12 +105,9 @@
     © 2025 Hotelify | Built with ❤️
   </footer>
 
-  <!-- AOS JS -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 800, once: true });
-
-    // Mobile menu toggle
     const btn = document.querySelector(".mobile-menu-button");
     const menu = document.querySelector(".mobile-menu");
     btn.addEventListener("click", () => menu.classList.toggle("hidden"));
