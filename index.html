@@ -3,20 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hotelify - Blue Luxury Glow</title>
+<title>Hotelify - Agoda Affiliate</title>
 
 <!-- AOS library -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
 <style>
-/* ===== Reset & Base ===== */
 * { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior: smooth; font-family: Arial, sans-serif; }
 body { scroll-snap-type: y mandatory; overflow-y: scroll; background:#e6f0fa; }
 a { text-decoration: none; color: inherit; }
 .container { width: 90%; margin: auto; max-width: 1200px; }
 
-/* ===== Navbar ===== */
 header { position: fixed; top:0; width:100%; background: rgba(255,255,255,0.95); z-index:1000; box-shadow:0 2px 8px rgba(0,0,0,0.1); backdrop-filter: blur(5px); }
 .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
 .nav-links { list-style: none; display: flex; gap: 1rem; }
@@ -24,43 +22,15 @@ header { position: fixed; top:0; width:100%; background: rgba(255,255,255,0.95);
 .nav-links a:hover { color: #0055aa; }
 .nav-toggle { display: none; font-size: 1.5rem; background: none; border: none; cursor:pointer; }
 
-/* ===== Floating Section Dots ===== */
-.section-dots {
-  position: fixed; right: 20px; top: 50%; transform: translateY(-50%); z-index: 1000; display:flex; flex-direction: column; gap:12px;
-}
-.section-dots button {
-  width:12px; height:12px; border-radius:50%; border:none; background: rgba(0,102,204,0.5); cursor:pointer; transition:0.3s;
-}
-.section-dots button.active { background:#003366; }
+section { height:100vh; scroll-snap-align:start; display:flex; justify-content:center; align-items:center; position:relative; opacity:0; transform:translateY(50px); transition: all 1s ease; overflow:hidden; }
 
-/* ===== Section Snap ===== */
-section { height:100vh; scroll-snap-align:start; display:flex; justify-content:center; align-items:center; position:relative; opacity:0; transform:translateY(50px); transition: all 1s ease; }
+.wave-bg { position:absolute; bottom:0; left:0; width:200%; height:200px; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23003366" fill-opacity="0.2" d="M0,192L60,197.3C120,203,240,213,360,197.3C480,181,600,139,720,144C840,149,960,203,1080,208C1200,213,1320,171,1380,149.3L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>'); background-repeat: repeat-x; animation: waveMove 10s linear infinite; z-index:-1; }
+@keyframes waveMove { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-/* ===== Hero Section ===== */
 .hero { color:#fff; text-align:center; overflow:hidden; }
-.hero::before {
-  content:""; position:absolute; top:0; left:0; width:100%; height:100%;
-  background: url('https://source.unsplash.com/1600x900/?hotel,blue') center/cover no-repeat;
-  animation: heroSlide 20s linear infinite alternate; z-index:-3; filter: brightness(0.5);
-}
-.hero::after {
-  content:""; position:absolute; top:0; left:0; width:100%; height:100%;
-  background: linear-gradient(135deg, rgba(0,102,204,0.5), rgba(0,153,255,0.3)); z-index:-2;
-}
-@keyframes heroSlide {
-  0% { transform: scale(1) translateX(0); }
-  50% { transform: scale(1.05) translateX(-20px); }
-  100% { transform: scale(1) translateX(0); }
-}
+.hero-bg { position:absolute; top:0; left:0; width:100%; height:100%; background: url('https://source.unsplash.com/1600x900/?hotel,blue') center/cover no-repeat; z-index:-3; filter: brightness(0.5); }
+.hero-overlay { content:""; position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(135deg, rgba(0,102,204,0.5), rgba(0,153,255,0.3)); z-index:-2; }
 
-/* Floating bubbles */
-.bubble { position: absolute; border-radius: 50%; opacity: 0.5; animation: float 6s ease-in-out infinite; background: rgba(0,153,255,0.2); z-index:-1; }
-@keyframes float { 0%{transform:translateY(0) scale(1);} 50%{transform:translateY(-30px) scale(1.1);} 100%{transform:translateY(0) scale(1);} }
-
-/* Particle canvas */
-#particles { position:absolute; top:0; left:0; width:100%; height:100%; z-index:-1; pointer-events:none; }
-
-/* Hero content */
 .hero-content { position: relative; z-index:1; }
 .hero-content h1 { font-size: 3rem; margin-bottom:1rem; background: linear-gradient(90deg, #66ccff, #003366, #3399ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: textGlow 5s ease-in-out infinite; }
 .hero-content p { font-size: 1.2rem; margin-bottom: 1.5rem; color:#cce6ff; }
@@ -68,23 +38,19 @@ section { height:100vh; scroll-snap-align:start; display:flex; justify-content:c
 .btn:hover { background:#0055aa; }
 .btn-pulse { animation: pulse 2s infinite; }
 @keyframes pulse { 0%{transform:scale(1);} 50%{transform:scale(1.08);} 100%{transform:scale(1);} }
-
-/* Gradient text glow */
-@keyframes textGlow {
-  0% { background-position:0% 50%; }
-  50% { background-position:100% 50%; }
-  100% { background-position:0% 50%; }
-}
+@keyframes textGlow { 0% { background-position:0% 50%; } 50% { background-position:100% 50%; } 100% { background-position:0% 50%; } }
 .dynamic-text { background: linear-gradient(90deg, #66ccff, #3399ff, #003366); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: textGlow 5s ease-in-out infinite; font-weight:bold; }
 
 /* Hotels Section */
-.hotels { background:#cce0ff; flex-direction:column; }
+.hotels { background:#cce0ff; flex-direction:column; padding-top:50px; }
+.hotels h2 { background: linear-gradient(90deg, #66ccff, #003366); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: textGlow 5s ease-in-out infinite; margin-bottom:1rem; }
 .hotel-grid { display:grid; gap:2rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); width:100%; max-width:1200px; margin:auto; }
 .hotel-card { border-radius:8px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.1); text-align:center; background:#e6f0fa; transition: transform 0.3s; }
 .hotel-card:hover { transform: translateY(-10px); }
 .hotel-card img { width:100%; height:200px; object-fit: cover; }
-.hotel-card h3 { margin:1rem 0 0.5rem; color:#003366; background: linear-gradient(90deg, #66ccff, #003366); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: textGlow 5s ease-in-out infinite; }
-.hotel-card p { margin-bottom:1rem; color:#0055aa; }
+.hotel-card h3 { margin:1rem 0 0.5rem; color:#003366; }
+.hotel-card p { margin-bottom:0.5rem; color:#0055aa; }
+.hotel-card .btn-book { margin-bottom:1rem; }
 
 /* About Section */
 .about { background:#99c2ff; flex-direction:column; }
@@ -123,58 +89,61 @@ footer { text-align:center; padding:1rem; background:#003366; color:#fff; }
   </div>
 </header>
 
-<!-- Floating Navigation Dots -->
-<div class="section-dots">
-  <button data-target="hero" class="active"></button>
-  <button data-target="hotels"></button>
-  <button data-target="about"></button>
-  <button data-target="contact"></button>
-</div>
-
 <!-- Hero -->
 <section id="hero" class="hero">
-  <canvas id="particles"></canvas>
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="wave-bg"></div>
   <div class="hero-content" data-aos="fade-up">
-    <h1>Discover <span class="dynamic-text">Best Hotel Deals Worldwide</span></h1>
-    <p>Book trusted hotels & save more!</p>
-    <a href="#hotels" class="btn btn-pulse">Explore Hotels</a>
+    <h1>Find <span class="dynamic-text">Best Agoda Hotel Deals</span></h1>
+    <p>Book trusted hotels worldwide with Agoda affiliate links and save!</p>
+
+    <!-- Hero Agoda Search Box -->
+    <div id="agoda_searchbox_hero" style="margin-top:20px;"></div>
   </div>
-  <div class="bubble" style="width:50px;height:50px;top:20%;left:10%;animation-delay:0s;"></div>
-  <div class="bubble" style="width:30px;height:30px;top:40%;left:70%;animation-delay:1s;"></div>
-  <div class="bubble" style="width:40px;height:40px;top:60%;left:30%;animation-delay:2s;"></div>
-  <div class="bubble" style="width:25px;height:25px;top:80%;left:50%;animation-delay:1.5s;"></div>
 </section>
 
 <!-- Hotels -->
 <section id="hotels" class="hotels">
+  <div class="wave-bg"></div>
   <h2 data-aos="fade-down">Featured Hotels</h2>
+
+  <!-- Hotels Grid -->
   <div class="hotel-grid">
     <div class="hotel-card" data-aos="fade-up">
       <img src="https://source.unsplash.com/400x300/?hotel,beach,blue" alt="Luxury Beach Resort">
       <h3>Luxury Beach Resort</h3>
       <p>5‑star beachfront hotel</p>
+      <a href="https://www.agoda.com/affiliate?cid=YOUR_CID_HERE&hotel=12345" target="_blank" class="btn btn-book">Book Now on Agoda</a>
     </div>
     <div class="hotel-card" data-aos="fade-up" data-aos-delay="100">
       <img src="https://source.unsplash.com/400x300/?hotel,city,blue" alt="City Center Hotel">
       <h3>City Center Hotel</h3>
       <p>Perfect location for business & leisure</p>
+      <a href="https://www.agoda.com/affiliate?cid=YOUR_CID_HERE&hotel=67890" target="_blank" class="btn btn-book">Book Now on Agoda</a>
     </div>
     <div class="hotel-card" data-aos="fade-up" data-aos-delay="200">
       <img src="https://source.unsplash.com/400x300/?hotel,budget,blue" alt="Budget Friendly Stay">
       <h3>Budget Friendly Stay</h3>
       <p>Affordable & comfortable</p>
+      <a href="https://www.agoda.com/affiliate?cid=YOUR_CID_HERE&hotel=24680" target="_blank" class="btn btn-book">Book Now on Agoda</a>
     </div>
   </div>
+
+  <!-- Hotels Section Agoda Search Box -->
+  <div id="agoda_searchbox_hotels" style="margin-top:30px;"></div>
 </section>
 
 <!-- About -->
 <section id="about" class="about">
+  <div class="wave-bg"></div>
   <h2 data-aos="fade-right">About Hotelify</h2>
-  <p data-aos="fade-left">Hotelify helps you find the best hotel deals from trusted partners like Agoda. Enjoy worldwide coverage and unbeatable deals!</p>
+  <p data-aos="fade-left">Hotelify is an Agoda affiliate site helping you find the best hotel deals. We provide trusted listings with direct Agoda booking links worldwide.</p>
 </section>
 
 <!-- Contact -->
 <section id="contact" class="contact">
+  <div class="wave-bg"></div>
   <h2 data-aos="fade-right">Get In Touch</h2>
   <form data-aos="fade-up">
     <input type="text" placeholder="Your Name" required>
@@ -185,9 +154,10 @@ footer { text-align:center; padding:1rem; background:#003366; color:#fff; }
 </section>
 
 <footer>
-  <p>© 2025 Hotelify | Built with ❤️</p>
+  <p>© 2025 Hotelify | Agoda Affiliate | Built with ❤️</p>
 </footer>
 
+<!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
 // Navbar toggle
@@ -199,38 +169,13 @@ toggle.addEventListener('click', () => navLinks.classList.toggle('show'));
 AOS.init({ duration: 1000, once: true });
 
 // Dynamic hero text
-const phrases = ["Best Hotel Deals Worldwide","Luxury Stays for Every Traveler","Affordable Hotels Anywhere","Book Your Dream Vacation"];
+const phrases = ["Best Agoda Hotel Deals","Luxury Stays for Every Traveler","Affordable Hotels Anywhere","Book Your Dream Vacation"];
 const dynamicText = document.querySelector('.dynamic-text');
 let i=0;
 setInterval(()=>{ i=(i+1)%phrases.length; dynamicText.textContent=phrases[i]; },3000);
 
-// Particle background
-const canvas=document.getElementById('particles');
-const ctx=canvas.getContext('2d');
-let particles=[];
-function resizeCanvas(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}
-window.addEventListener('resize',resizeCanvas);
-resizeCanvas();
-for(let j=0;j<100;j++){particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*2+1,dx:(Math.random()-0.5)*0.5,dy:(Math.random()-0.5)*0.5});}
-function animate(){ctx.clearRect(0,0,canvas.width,canvas.height);particles.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(0,153,255,0.3)';ctx.fill();p.x+=p.dx;p.y+=p.dy;if(p.x>canvas.width)p.x=0;if(p.x<0)p.x=canvas.width;if(p.y>canvas.height)p.y=0;if(p.y<0)p.y=canvas.height;});requestAnimationFrame(animate);}
-animate();
-
-// Floating nav dots
-const sections = document.querySelectorAll('section');
-const dots = document.querySelectorAll('.section-dots button');
-function setActiveDot(){
-  let index = Array.from(sections).findIndex(section=>{
-    const rect = section.getBoundingClientRect();
-    return rect.top <= window.innerHeight/2 && rect.bottom >= window.innerHeight/2;
-  });
-  dots.forEach(dot=>dot.classList.remove('active'));
-  if(index>=0) dots[index].classList.add('active');
-}
-window.addEventListener('scroll', setActiveDot);
-setActiveDot();
-dots.forEach(dot=>{dot.addEventListener('click', ()=> { document.getElementById(dot.dataset.target).scrollIntoView({behavior:'smooth'}); }); });
-
 // Section fade/slide animation
+const sections = document.querySelectorAll('section');
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
@@ -240,6 +185,26 @@ const observer = new IntersectionObserver(entries=>{
   });
 },{ threshold:0.3 });
 sections.forEach(section=>observer.observe(section));
+</script>
+
+<!-- Agoda Affiliate Script -->
+<script type="text/javascript" src="https://ajaxsearch.partners.agoda.com/affiliates/js/agoda_search.js"></script>
+<script type="text/javascript">
+  var heroSearch = new SrchObject();
+  heroSearch.clientID("YOUR_CID_HERE"); // Replace with your Agoda CID
+  heroSearch.addParam("defaultCity","Asia");
+  heroSearch.addParam("currency","USD");
+  heroSearch.addParam("checkIn","2026-01-01");
+  heroSearch.addParam("checkOut","2026-01-02");
+  heroSearch.show("agoda_searchbox_hero");
+
+  var hotelsSearch = new SrchObject();
+  hotelsSearch.clientID("YOUR_CID_HERE"); // Replace with your Agoda CID
+  hotelsSearch.addParam("defaultCity","Asia");
+  hotelsSearch.addParam("currency","USD");
+  hotelsSearch.addParam("checkIn","2026-01-01");
+  hotelsSearch.addParam("checkOut","2026-01-02");
+  hotelsSearch.show("agoda_searchbox_hotels");
 </script>
 </body>
 </html>
