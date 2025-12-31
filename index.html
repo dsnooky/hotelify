@@ -24,21 +24,24 @@ header { position: fixed; top:0; width:100%; background: #003580; z-index:1000; 
 
 section { min-height:100vh; scroll-snap-align:start; display:flex; justify-content:center; align-items:center; position:relative; opacity:0; transform:translateY(50px); transition: all 1s ease; overflow:hidden; }
 
+/* Wave animation */
 .wave-bg { position:absolute; bottom:0; left:0; width:200%; height:200px; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23003580" fill-opacity="0.2" d="M0,192L60,197.3C120,203,240,213,360,197.3C480,181,600,139,720,144C840,149,960,203,1080,208C1200,213,1320,171,1380,149.3L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>'); background-repeat: repeat-x; animation: waveMove 10s linear infinite; z-index:-1; }
 @keyframes waveMove { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
+/* Hero Section */
 .hero { color:#fff; text-align:center; overflow:hidden; }
-.hero-bg { position:absolute; top:0; left:0; width:100%; height:100%; background: url('https://source.unsplash.com/1600x900/?hotel,blue') center/cover no-repeat; z-index:-3; filter: brightness(0.5); }
+.hero-bg { position:absolute; top:0; left:0; width:100%; height:100%; background: url('https://source.unsplash.com/1600x900/?hotel,luxury') center/cover no-repeat; z-index:-3; filter: brightness(0.5); }
 .hero-overlay { content:""; position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(135deg, rgba(0,168,255,0.5), rgba(0,168,255,0.3)); z-index:-2; }
-
 .hero-content { position: relative; z-index:1; }
 .hero-content h1 { font-size: 3rem; margin-bottom:1rem; background: linear-gradient(90deg, #003580, #00a8ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: textGlow 5s ease-in-out infinite; }
 .hero-content p { font-size: 1.2rem; margin-bottom: 1rem; color:#1c1c1c; }
 
+/* Popular Cities */
 .popular-cities { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-bottom:15px; }
 .city-btn { padding:8px 15px; border:none; border-radius:6px; background: #003580; color:#fff; cursor:pointer; transition:0.3s; font-weight:500; }
 .city-btn:hover { background: #00a8ff; transform: scale(1.05); }
 
+/* Buttons */
 .btn { background: #003580; color: #fff; padding: 0.8rem 1.5rem; border:none; cursor:pointer; font-size: 1rem; border-radius:5px; transition:0.3s; }
 .btn:hover { background:#00a8ff; }
 .btn-pulse { animation: pulse 2s infinite; }
@@ -46,9 +49,13 @@ section { min-height:100vh; scroll-snap-align:start; display:flex; justify-conte
 @keyframes textGlow { 0% { background-position:0% 50%; } 50% { background-position:100% 50%; } 100% { background-position:0% 50%; } }
 .dynamic-text { background: linear-gradient(90deg, #003580, #00a8ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: textGlow 5s ease-in-out infinite; font-weight:bold; }
 
-.hotels { background:#f2f6fc; flex-direction:column; padding-top:50px; }
-.hotels h2 { background: linear-gradient(90deg, #003580, #00a8ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: textGlow 5s ease-in-out infinite; margin-bottom:1rem; }
-.hotel-grid { display:grid; gap:2rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); width:100%; max-width:1200px; margin:auto; }
+/* Hotels Section */
+.hotels { 
+  background: url('https://source.unsplash.com/1600x900/?hotel,city') center/cover no-repeat; 
+  background-size: cover; flex-direction:column; padding-top:50px; position: relative; 
+}
+.hotels::before { content:""; position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(242,246,252,0.7); z-index:0; }
+.hotel-grid { display:grid; gap:2rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); width:100%; max-width:1200px; margin:auto; position: relative; z-index:1; }
 .hotel-card { border-radius:8px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.1); text-align:center; background:#ffffff; transition: transform 0.3s; }
 .hotel-card:hover { transform: translateY(-10px); }
 .hotel-card img { width:100%; height:200px; object-fit: cover; }
@@ -56,23 +63,35 @@ section { min-height:100vh; scroll-snap-align:start; display:flex; justify-conte
 .hotel-card p { margin-bottom:0.5rem; color:#00a8ff; }
 .hotel-card .btn-book { margin-bottom:1rem; }
 
-.about { background:#f2f6fc; flex-direction:column; }
-.about h2 { background: linear-gradient(90deg, #003580, #00a8ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: textGlow 5s ease-in-out infinite; }
-.about p { text-align:center; max-width:800px; margin:auto; color:#1c1c1c; line-height:1.6; }
+/* About Section */
+.about { 
+  background: url('https://source.unsplash.com/1600x900/?travel,blue') center/cover no-repeat; 
+  background-size: cover; flex-direction:column; padding: 50px 0; position: relative; 
+}
+.about::before { content:""; position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(242,246,252,0.6); z-index:0; }
+.about h2, .about p { position: relative; z-index:1; }
 
-.contact { background:#f2f6fc; flex-direction:column; }
-.contact h2 { background: linear-gradient(90deg, #003580, #00a8ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: textGlow 5s ease-in-out infinite; }
+/* Contact Section */
+.contact { 
+  background: url('https://source.unsplash.com/1600x900/?hotel,night') center/cover no-repeat; 
+  background-size: cover; flex-direction:column; padding: 50px 0; position: relative; 
+}
+.contact::before { content:""; position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(242,246,252,0.6); z-index:0; }
+.contact h2, .contact form { position: relative; z-index:1; }
 .contact form { display:flex; flex-direction: column; gap:1rem; max-width:600px; margin:auto; }
 .contact input, .contact textarea { padding:0.8rem; border:1px solid #003580; border-radius:4px; width:100%; }
 .contact textarea { resize: vertical; min-height:120px; }
 
+/* Footer */
 footer { text-align:center; padding:1rem; background:#003580; color:#fff; }
 
+/* Agoda Searchbox */
 .agoda-searchbox { max-width: 600px; margin: 20px auto; padding: 15px; background: #ffffff; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
 .agoda-searchbox input, .agoda-searchbox select { width: calc(50% - 10px); margin: 5px; padding: 10px; border: 1px solid #003580; border-radius: 6px; font-size: 1rem; }
 .agoda-searchbox button { width: 100%; margin-top: 10px; padding: 12px; background: #003580; color: #fff; border: none; border-radius: 6px; font-size: 1rem; cursor: pointer; transition: 0.3s; }
 .agoda-searchbox button:hover { background: #00a8ff; }
 
+/* Scroll-up Button */
 #scrollUp { position: fixed; bottom: 30px; right: 30px; background: #003580; color: #fff; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 1.5rem; cursor: pointer; display: none; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: transform 0.3s; }
 #scrollUp:hover { background:#00a8ff; transform: scale(1.1); }
 
@@ -110,7 +129,6 @@ footer { text-align:center; padding:1rem; background:#003580; color:#fff; }
     <h1>Find <span class="dynamic-text">Best Agoda Hotel Deals</span></h1>
     <p>Book trusted hotels worldwide with Agoda affiliate links and save!</p>
 
-    <!-- Popular Cities Quick Links -->
     <div class="popular-cities" data-aos="fade-up" data-aos-delay="200">
       <button class="city-btn" data-city="Tokyo">Tokyo</button>
       <button class="city-btn" data-city="Bangkok">Bangkok</button>
@@ -119,7 +137,6 @@ footer { text-align:center; padding:1rem; background:#003580; color:#fff; }
       <button class="city-btn" data-city="Paris">Paris</button>
     </div>
 
-    <!-- Styled Hero Agoda Search Box -->
     <div id="agoda_searchbox_hero" class="agoda-searchbox"></div>
   </div>
 </section>
@@ -174,10 +191,8 @@ footer { text-align:center; padding:1rem; background:#003580; color:#fff; }
   <p>© 2025 Hotelify | Agoda Affiliate | Built with ❤️</p>
 </footer>
 
-<!-- Scroll-up Button -->
 <button id="scrollUp">&#8679;</button>
 
-<!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script src="https://ajaxsearch.partners.agoda.com/affiliates/js/agoda_search.js"></script>
 <script>
@@ -240,14 +255,4 @@ hotelsSearch.addParam("checkIn","2026-01-01");
 hotelsSearch.addParam("checkOut","2026-01-02");
 hotelsSearch.show("agoda_searchbox_hotels");
 
-// Popular Cities buttons
-document.querySelectorAll('.city-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    let city = btn.getAttribute('data-city');
-    heroSearch.addParam("defaultCity", city);
-    heroSearch.show("agoda_searchbox_hero");
-  });
-});
-</script>
-</body>
-</html>
+//
